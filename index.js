@@ -28,5 +28,5 @@ app.get("/", (req, res) => {
     res.send("hello from NCG");
 });
 
-app.listen(3000, () => console.log("server is up and running on port 3000"));
+app.listen(3000, () => {console.log("server is up and running on port 3000")});
 
