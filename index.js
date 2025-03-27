@@ -29,10 +29,6 @@ app.get("/", (req, res) => {
     
 });
 
-pp.get("/", (req, res) => {
-    res.redirect("/students");
-});
-
 
 app.get("/students", async (req, res) => {
     try {
