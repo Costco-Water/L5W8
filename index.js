@@ -6,7 +6,7 @@ const methodOverride = require("method-override");
 const app = express();
 
 mongoose
-    .connect("mongodb://20.0.153.128:10999/fahimDB", {
+    .connect("mongodb://20.0.153.128:10999/studentsDB", {
         useNewUrlParser: true,
         useUnifiedTopology: true,
     })
