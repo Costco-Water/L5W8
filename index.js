@@ -20,7 +20,7 @@ app.use(methodOverride("_method"));
 app.set("view engine", "ejs");
 
 
-const studentSchema = new mongoose.Schema({ name: String, age: Number, course: String });
+const studentSchema = new mongoose.Schema({ name: String, age: Number, course: String, email: String, phone: Number });
 const Student = mongoose.model("Student", studentSchema);
 
 
@@ -46,7 +46,7 @@ app.get("/student/new", (req, res) => {
 
 app.post("/student", async (req, res) => {
     try {
-        const newStudent = new Student({ name: req.body.name, age: req.body.age, course: req.body.course });
+        const newStudent = new Student({ name: req.body.name, age: req.body.age, course: req.body.course, email: req.body.email, phone: req.body.phone });
         await newStudent.save();
         res.redirect("/students");
     } catch (error) {
@@ -81,7 +81,7 @@ app.put("/student/:id", async (req, res) => {
     try {
         const student = await Student.findByIdAndUpdate(
             req.params.id,
-            { name: req.body.name, age: req.body.age, course: req.body.course },
+            { name: req.body.name, age: req.body.age, course: req.body.course, email: req.body.email, phone: req.body.phone },
             { new: true }
         );
         if (!student) return res.status(404).send("Student Not Found");
