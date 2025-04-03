@@ -103,4 +103,4 @@ app.delete("/student/:id", async (req, res) => {
 });
 
 
-app.listen(10545,()=>{console.log("Server is up on port 3000")})
+app.listen(8080,()=>{console.log("Server is up on port 3000")})
